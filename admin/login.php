@@ -1,6 +1,6 @@
 <?php
-
-
+	$title = 'Admin Log In';
+	require_once('../tmpl/head.php');
 ?>
 	<form action="" method="">
 		<fieldset>
@@ -15,5 +15,5 @@
 	</form>
 
 <?php
-
+	require_once('../tmpl/footer.php');
 ?>
