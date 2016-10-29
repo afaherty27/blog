@@ -39,8 +39,9 @@
                     setcookie('username', $row['username'], time() + (60*60*24*30));
                      
                     $home_url = 'http://' . $_SERVER['HTTP_HOST'] . 
-                            dirname($_SERVER['PHP_SELF']) . '/index.php';
+                            dirname($_SERVER['PHP_SELF']) ;
                     header('Location: ' . $home_url);
+					
                 } //END RESULT IF
                 else 
                 {
@@ -79,6 +80,7 @@
     {
         echo('<p class="login"> You are logged in as ' 
                 . $_SESSION['username'] . '</p>');
+		
     }// end else confirming login
     
     require_once('../tmpl/footer.php');
