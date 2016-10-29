@@ -1,6 +1,6 @@
 <?php
 	require_once('../req/startsession.php');
-	
+	require_once('../req/appvars.php');
 	$title = 'Admin Home Page';
 	require_once('../tmpl/head.php');
 	
@@ -17,8 +17,7 @@
 	}
 	else
 	{
-		$login_redirect = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/login.php';
-		header('Location: ' . $login_redirect);
+		header('Location: ' . ADMIN_LOGIN_URL);
 	}
 	
 	require_once('../tmpl/footer.php');

@@ -3,7 +3,7 @@
     session_start();
     
     //if logged in delete session vars
-    if (isset($_SESSION['id']))
+    if (isset($_SESSION['user_id']))
     {
         $_SESSION = array();
         
@@ -19,10 +19,11 @@
     }
     
     //kill cookies
-    setcookie('id', '', time() - 3600);
-    setcookie('user_name', '', time() - 3600);
-
-    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) .
-            '/index.php';
-   header('Location: ' . $home_url);
+    setcookie('user_id', '', time() - 3600);
+    setcookie('username', '', time() - 3600);
+	setcookie('first_name', '', time() - 3600);
+    setcookie('last_name', '', time() - 3600);
+	
+	
+	header('Location: ' . ADMIN_HOME_URL);
 ?>
