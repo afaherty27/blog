@@ -3,16 +3,16 @@
 	require_once('../req/appvars.php');
 	
 	$title = 'Create New Post';
+	$jsfile = '../js/admin.js';
 	require_once('../tmpl/head.php');
 	
-	//connect to database
-	$conn = mysqli_connect(DB_HOST, DB_NAME, DB_PASS, DB_NAME);
+
 	
 	//require user to be logged in, else redirect to login page
 	if (isset($_SESSION['user_id']))
 	{
 ?>
-		<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<form id="newpost" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 			<label for="title">Title: </label><br />
 			<input type="text" name="title" value="" /><br />
 			<label for="">Description: </label><br />
@@ -21,7 +21,7 @@
 			<textarea name="content" rows="15" 
 					  cols="100" value="">
 			</textarea><br />
-			<input type="submit" name="submit" value="submit" />
+			<input id="submitnewpost" type="submit" name="submit" value="submit" />
 			<!-- on submit, bootstrap modal confirmation screen, AJAX call to 
 				 add to run addnewpost.php, and execute database calls
 			-->
