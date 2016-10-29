@@ -1,6 +1,7 @@
 <?php
     //start session to access session vars
     session_start();
+	require_once('../req/appvars.php');
     
     //if logged in delete session vars
     if (isset($_SESSION['user_id']))
