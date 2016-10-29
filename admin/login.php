@@ -1,7 +1,8 @@
 <?php
-    require_once('../req/connectvars.php');
     session_start();
-    
+	require_once('../req/connectvars.php');
+	require_once('../req/appvars.php');
+	
     //clear errors
     $error = '';
 
@@ -34,13 +35,15 @@
                     //assign value to session vars
                     $_SESSION['user_id']  = $row['user_id'];
                     $_SESSION['username'] = $row['username'];
+					$_SESSION['first_name']  = $row['first_name'];
+                    $_SESSION['last_name'] = $row['last_name'];
                     
                     setcookie('user_id', $row['user_id'], time() + (60*60*24*30));
                     setcookie('username', $row['username'], time() + (60*60*24*30));
+					setcookie('first_name', $row['first_name'], time() + (60*60*24*30));
+                    setcookie('last_name', $row['last_name'], time() + (60*60*24*30));
                      
-                    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . 
-                            dirname($_SERVER['PHP_SELF']) ;
-                    header('Location: ' . $home_url);
+                    header('Location: ' . ADMIN_HOME_URL);
 					
                 } //END RESULT IF
                 else 
