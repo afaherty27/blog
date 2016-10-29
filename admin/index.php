@@ -10,7 +10,7 @@
 	{
 		echo 'logged in'; //DEBUG
 ?>
-	<a href="#">Write new blog post</a>
+	<a href="newpost.php">Write new blog post</a>
 	<a href="#">Edit existing posts</a>
 	<a href="#">Publish Posts</a>
 <?php
