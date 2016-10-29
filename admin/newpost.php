@@ -9,20 +9,19 @@
 	//require user to be logged in, else redirect to login page
 	if (isset($_SESSION['user_id']))
 	{
-		echo 'lets add a new post'; //DEBUG
 ?>
 	<form method="post" action="#">
-		<label for="title">Title: </title>
-		<input type="text" name="title" value="" />
-		<label for="">Description: </label>
-		<input type="text" name="Description" value=""/>
-		<label for="">Content: </label>
+		<label for="title">Title: </label><br />
+		<input type="text" name="title" value="" /><br />
+		<label for="">Description: </label><br />
+		<input type="text" name="Description" value=""/><br />
+		<label for="">Content: </label><br />
 		<textarea name="content" rows="15" 
 				  cols="100" value="">
-		</textarea>
+		</textarea><br />
 		<input type="submit" name="submit" value="submit" />
 	</form>
-
+	<br />
 	<a href="index.php">ADMIN HOME</a>
 	<a href="#">Edit existing posts</a>
 	<a href="#">Publish Posts</a>
