@@ -26,5 +26,5 @@
     setcookie('last_name', '', time() - 3600);
 	
 	
-	header('Location: ' . ADMIN_HOME_URL);
+	header('Location: ' . HOME_URL);
 ?>
