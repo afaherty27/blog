@@ -6,7 +6,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
 		<?php
-			if (isset($jsfile)
+			if (isset($jsfile))
 			{
 		?>		
 				script type="text/javascript" 
