@@ -1,5 +1,4 @@
 <?php
-    session_start();
 	require_once('req/connectvars.php');
 	require_once('req/appvars.php');
 	
@@ -60,33 +59,23 @@
         }// END POST ISSET
     }//END COOKIE !ISSET IF
 
-    //title
-    $title = "Admin Log In";
-    require_once 'tmpl/head.php';
 
     if (empty($_SESSION['user_id']))
     {
         echo '<p class="error">' . $error . '</p>';
 ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <fieldset>
-            <legend>Log In</legend>
+		<div class="form-group">
+        
             <label for="user">Username: </label>
-            <input type="text" id="user" name="user" />
+            <input type="text" class="form-control" name="user" />
             <br />
             <label for="pass">Password: </label>
-            <input type="password" id="pass" name="pass" />
-        </fieldset>
-        <input type="submit" value="Log In" name="submit" />
+            <input type="password" class="form-control" name="pass" />
+        </div><!-- end form-group -->
+        <input type="submit" class="btn btn-primary" value="Log In" name="submit" />
+		<a class="btn btn-primary" data-dismiss="modal">Close</a>
     </form>
 <?php
     }//END EMPTY USERID COOKIE IF
-    else 
-    {
-        echo('<p class="login"> You are logged in as ' 
-                . $_SESSION['username'] . '</p>');
-		
-    }// end else confirming login
-    
-    require_once('tmpl/footer.php');
 ?>

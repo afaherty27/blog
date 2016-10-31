@@ -41,15 +41,16 @@
 						<li class="divider"></li> <!-- divides 2 sections of dropdown -->
 			<?php			
 					}
-				
-					echo '<li><a href="logout.php">LOG OUT</a></li>';
+			?>	
+					<li><a href="<?php echo HOME_URL . 'logout.php'; ?>">LOG OUT</a></li>
+			<?php
 				}
 				else
 				{
 			?>
 					<li><a href="#">SIGN UP</a></li>
 					<li class="divider"></li> <!-- divides 2 sections of dropdown -->
-					<li><a href="login.php">LOG IN</a></li>
+					<li><a href="#login" data-toggle="modal">LOG IN</a></li>
 			<?php
 				}
 			?>
