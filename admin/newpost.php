@@ -15,6 +15,6 @@
 	<input type="submit" id="submitnewpost" class="btn btn-primary" 
 		   value="ADD POST" name="submit" />
 	<a class="btn btn-primary" data-dismiss="modal">Close</a><br />
-	<small>REMINDER: POST WILL ONLY DISPLAY IF 'PUBLISH' IF SELECTED</small>
+	<small>REMINDER: POST WILL ONLY DISPLAY IF 'PUBLISH' IS SELECTED</small>
 </form>
 
