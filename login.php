@@ -21,7 +21,7 @@
             {
                   
                 //look up user
-                $query = "SELECT user_id, username FROM users " .
+                $query = "SELECT user_id, username, first_name, last_name, admin_access FROM users " .
                         "WHERE username = '$user' AND password = SHA('$pass')";
                 $result = mysqli_query($conn, $query); 
                 
