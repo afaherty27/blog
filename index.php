@@ -1,4 +1,5 @@
 <?php
+	require_once('req/startsession.php');
 	$title = "Blog -- HOME";
 	require_once('tmpl/head.php');
 	require_once('tmpl/nav.php');
@@ -12,7 +13,7 @@
 
 		<h2 class="rowHeader">ENTRY 1</h2>
 		<p>
-		  stuff about this entry...
+			pst data here
 		</p>
 	  </div> <!-- CLOSE col-sm-4 -->
 	  <div class="col-sm-4">
