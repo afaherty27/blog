@@ -44,7 +44,7 @@
                     setcookie('last_name', $row['last_name'], time() + (60*60*24*30));
 					setcookie('admin_access', $row['admin_access'], time() + (60*60*24*30));
                      
-                    header('Location: ' . HOME_URL);
+					echo '<meta http-equiv="refresh" content="0">';
 					
                 } //END RESULT IF
                 else 

@@ -11,7 +11,7 @@
     </div> <!-- END NAVBAR-HEADER-->
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
-        <li class="active"><a href="<?php echo HOME_URL; ?>">HOME</a></li>
+        
         <li class="dropdown">
           <a href="#"
              class="dropdown-toggle"
@@ -19,7 +19,7 @@
 				<?php 
 					if (isset($_SESSION['user_id']))
 					{
-						echo 'PROFILE';
+						echo 'Welcome, ' . $_SESSION['username'] . ' ';
 					}
 					else
 					{
