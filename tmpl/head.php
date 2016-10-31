@@ -9,7 +9,7 @@
 			if (isset($jsfile))
 			{
 		?>		
-				script type="text/javascript" 
+				<script type="text/javascript" 
 					   src="<?php echo $jsfile;?>"></script>
 		<?php  
 			}

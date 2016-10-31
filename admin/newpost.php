@@ -1,4 +1,5 @@
 <form id="newpost" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+	<h4>New Blog Post</h4>
 	<div class="form-group">
 		<label for="title">Title: </label><br />
 		<input type="text" class="form-control" 
