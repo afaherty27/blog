@@ -1,7 +1,7 @@
 <?php
     session_start();
-	require_once('../req/connectvars.php');
-	require_once('../req/appvars.php');
+	require_once('req/connectvars.php');
+	require_once('req/appvars.php');
 	
     //clear errors
     $error = '';
@@ -60,7 +60,7 @@
 
     //title
     $title = "Admin Log In";
-    require_once '../tmpl/head.php';
+    require_once 'tmpl/head.php';
 
     if (empty($_SESSION['user_id']))
     {
@@ -86,5 +86,5 @@
 		
     }// end else confirming login
     
-    require_once('../tmpl/footer.php');
+    require_once('tmpl/footer.php');
 ?>
