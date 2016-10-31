@@ -33,17 +33,19 @@
                     $row = mysqli_fetch_array($result);
                     
                     //assign value to session vars
-                    $_SESSION['user_id']  = $row['user_id'];
-                    $_SESSION['username'] = $row['username'];
-					$_SESSION['first_name']  = $row['first_name'];
-                    $_SESSION['last_name'] = $row['last_name'];
+                    $_SESSION['user_id']  	  = $row['user_id'];
+                    $_SESSION['username'] 	  = $row['username'];
+					$_SESSION['first_name']   = $row['first_name'];
+                    $_SESSION['last_name']    = $row['last_name'];
+					$_SESSION['admin_access'] = $row['admin_access'];
                     
                     setcookie('user_id', $row['user_id'], time() + (60*60*24*30));
                     setcookie('username', $row['username'], time() + (60*60*24*30));
 					setcookie('first_name', $row['first_name'], time() + (60*60*24*30));
                     setcookie('last_name', $row['last_name'], time() + (60*60*24*30));
+					setcookie('admin_access', $row['admin_access'], time() + (60*60*24*30));
                      
-                    header('Location: ' . ADMIN_HOME_URL);
+                    header('Location: ' . HOME_URL);
 					
                 } //END RESULT IF
                 else 
