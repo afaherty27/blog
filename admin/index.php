@@ -17,7 +17,7 @@
 	}
 	else
 	{
-		header('Location: ' . ADMIN_LOGIN_URL);
+		header('Location: ' . LOGIN_URL);
 	}
 	
 	require_once('../tmpl/footer.php');
