@@ -15,12 +15,45 @@
         <li class="dropdown">
           <a href="#"
              class="dropdown-toggle"
-             data-toggle="dropdown">LOGIN<b class="caret"></b></a>
+             data-toggle="dropdown">
+				<?php 
+					if (isset($_SESSION['user_id']))
+					{
+						echo 'PROFILE';
+					}
+					else
+					{
+						echo 'LOGIN';
+					}
+				?><b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">USER</a></li>
-            <li class="divider"></li> <!-- divides 2 sections of dropdown -->
-            <li class="dropdown-header"></li><!--menu title -->
-            <li><a href="#">ADMIN</a></li>
+			
+			<?php
+				if (isset($_SESSION['user_id']))
+				{
+						
+					echo '<li><a href="#">USER</a></li>';
+					
+					if ($_SESSION['admin_access'] == 1)
+					{
+			?>			
+						<li><a href="admin/">ADMIN</a></li>
+						<li class="divider"></li> <!-- divides 2 sections of dropdown -->
+			<?php			
+					}
+				
+					echo '<li><a href="logout.php">LOG OUT</a></li>';
+				}
+				else
+				{
+			?>
+					<li><a href="#">SIGN UP</a></li>
+					<li class="divider"></li> <!-- divides 2 sections of dropdown -->
+					<li><a href="login.php">LOG IN</a></li>
+			<?php
+				}
+			?>
+
           </ul>
         </li>
       </ul>
