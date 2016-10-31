@@ -8,20 +8,7 @@
 		  </div> <!-- close container -->
 		</div> <!-- close navbar -->
 		
-		<!-- newpost modal -->
-		<div class="modal fade" id="newpost" role="dialog">
-		  <div class="modal-dialog">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h4>Write A New Post</h4>
-				<div class="modal-body">
-					<?php require_once('newpost.php'); ?>
-				</div> <!-- END modal-body -->
-			  </div> <!-- END modal-header -->
-			</div> <!-- END modal-content-->
-		  </div> <!-- END modal-dialog -->
-		</div> <!-- END modal -->
-
+	
 		<!-- login modal -->
 		<div class="modal fade" id="login" role="dialog">
 		  <div class="modal-dialog">
@@ -35,5 +22,7 @@
 			</div> <!-- END modal-content-->
 		  </div> <!-- END modal-dialog -->
 		</div> <!-- END modal -->
+	
+		
 	</body>
 </html>
