@@ -13,7 +13,7 @@
 ?>
 	<ul>
 	<a href="newpost.php">Write new blog post</a><br />
-	<li><a href="#newpost" data-toggle="modal">+</a></li><br />
+	<li><a href="#newpost" data-toggle="modal">new post</a></li><br />
 	<a href="#">Edit existing posts</a><br/>
 	<a href="#">Publish Posts</a><br/>
 	</ul>
