@@ -7,11 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button> <!-- END BUTTON-->
-      <li><a class="navbar-brand" href="index.php">BLOG</a></li><!-- Title of page -->
+      <li><a class="navbar-brand" href="<?php echo HOME_URL; ?>">BLOG</a></li><!-- Title of page -->
     </div> <!-- END NAVBAR-HEADER-->
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
-        <li class="active"><a href="#">HOME</a></li>
+        <li class="active"><a href="<?php echo HOME_URL; ?>">HOME</a></li>
         <li class="dropdown">
           <a href="#"
              class="dropdown-toggle"
@@ -37,7 +37,7 @@
 					if ($_SESSION['admin_access'] == 1)
 					{
 			?>			
-						<li><a href="admin/">ADMIN</a></li>
+						<li><a href="<?php echo ADMIN_HOME_URL; ?>">ADMIN</a></li>
 						<li class="divider"></li> <!-- divides 2 sections of dropdown -->
 			<?php			
 					}

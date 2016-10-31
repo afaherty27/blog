@@ -1,5 +1,6 @@
 <?php
 	require_once('req/startsession.php');
+	require_once('req/appvars.php');
 	$title = "Blog -- HOME";
 	require_once('tmpl/head.php');
 	require_once('tmpl/nav.php');
