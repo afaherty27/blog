@@ -9,7 +9,7 @@
 		</div> <!-- close navbar -->
 		
 		
-		<!--SUPPORT MODAL -->
+		<!-- login modal -->
 		<div class="modal fade" id="login" role="dialog">
 		  <div class="modal-dialog">
 			<div class="modal-content">

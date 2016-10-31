@@ -13,9 +13,7 @@
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
         
         <li class="dropdown">
-          <a href="#"
-             class="dropdown-toggle"
-             data-toggle="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<?php 
 					if (isset($_SESSION['user_id']))
 					{
@@ -26,7 +24,7 @@
 						echo 'LOGIN';
 					}
 				?><b class="caret"></b></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu multi-level">
 			
 			<?php
 				if (isset($_SESSION['user_id']))
@@ -37,7 +35,7 @@
 					if ($_SESSION['admin_access'] == 1)
 					{
 			?>			
-						<li><a href="<?php echo ADMIN_HOME_URL; ?>">ADMIN</a></li>
+						<li><a href="<?php echo ADMIN_HOME_URL; ?>">ADMIN</a></li>	
 						<li class="divider"></li> <!-- divides 2 sections of dropdown -->
 			<?php			
 					}
@@ -48,9 +46,10 @@
 				else
 				{
 			?>
-					<li><a href="#">SIGN UP</a></li>
-					<li class="divider"></li> <!-- divides 2 sections of dropdown -->
 					<li><a href="#login" data-toggle="modal">LOG IN</a></li>
+					<li class="divider"></li> <!-- divides 2 sections of dropdown -->
+					<li><a href="#">SIGN UP</a></li>
+					
 			<?php
 				}
 			?>
