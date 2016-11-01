@@ -8,6 +8,7 @@
 	require_once('../tmpl/head.php');
 	require_once('../tmpl/nav.php');
 	
+	//empty vars for output messages
 	$error = '';
 	$added = '';
 	
@@ -19,14 +20,30 @@
 		$blogtitle   = mysqli_real_escape_string($conn, trim($_POST['title']));
 		$description = mysqli_real_escape_string($conn, trim($_POST['description']));
 		$content 	 = mysqli_real_escape_string($conn, trim($_POST['content']));
+		$publish 	 = isset($_POST['publish']);
 		
-		
+		//validate form
 		if(!empty($blogtitle) && !empty($description) && 
 				!empty($content))
 		{
 			//insert query
-			$insert = "INSERT INTO blog_post (user_id, title, description, content, post_date) " .
-					"VALUES ('$user_id', '$blogtitle', '$description', '$content', NOW())";
+			if ($publish == '1')
+			{
+				$insert = "INSERT INTO blog_post (user_id, title, description, " .
+						"content, post_date, publish) VALUES ('$user_id', " .
+						"'$blogtitle', '$description', '$content', NOW(), " .
+						"'$publish')";	
+				$added = '<p>Blog Entry has been published to the web site</p>';
+			}
+			else
+			{
+				
+				$insert = "INSERT INTO blog_post (user_id, title, description, " .
+						"content, post_date, publish_date) VALUES ('$user_id', '$blogtitle', " .
+						"'$description', '$content', NOW(), null)";	
+				$added = '<p>Blog Entry has been posted to the database</p>';
+			}
+				
 			//execute query
 			mysqli_query($conn, $insert) 
 					or die('Error adding post to the database');
@@ -35,8 +52,8 @@
 			$blogtitle = '';
 			$description = '';
 			$content = '';
+			$publish = '';
 			
-			$added = '<p>Blog Entry has been posted to the database</p>';
 		}//end validation
 		else
 		{
@@ -74,7 +91,7 @@
 					<textarea name="content" class="form-control" rows="15" cols="100"
 							  value="<?php if(!empty($content)) echo $content; ?>">
 					</textarea>
-					<label><input type="checkbox" value="1"> Publish</label>
+					<input type="checkbox" value="1" name="publish"> <label for="publish">Publish</label>
 				</div>
 				<input type="submit" id="submitnewpost" class="btn btn-primary" 
 					   value="ADD POST" name="submit" />
