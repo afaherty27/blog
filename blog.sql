@@ -25,7 +25,8 @@ CREATE TABLE blog_post (
 	title			VARCHAR(250),
 	description		TEXT,
 	content			TEXT,
-	post_date		TEXT,
+	post_date		DATE ,
 	publish			TINYINT DEFAULT 0,
+	publish_date	DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
